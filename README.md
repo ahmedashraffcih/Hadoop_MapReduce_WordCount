@@ -2,7 +2,7 @@
 <img src="https://rishavanand.github.io/static/images/greetings.gif" align="center" style="width: 100% " />
 </div>
 
-# [Hadoop Map Reduce - Word Count](https://8weeksqlchallenge.com)
+# Hadoop Map Reduce - Word Count
 > This repository contains all of my code for developing Hadoop MapReduce (Word Count Example)
 > with Java and run it on AWS EMR Cluster
 >
@@ -13,8 +13,8 @@
 * [Introduction](#-introduction)
 * [Code](#-code)
 * [AWS Deployment](#-aws-deployment)
-* [Resources](#-)
-
+* [Resources](#-resources)
+---
 
 ## 🔧 Installation
 * **Java Installation** - Check whether the Java is installed or not using the following command.
@@ -122,9 +122,26 @@ public static class ReducerSide extends Reducer<Text, IntWritable, Text, IntWrit
 * Choose the EC2 key pair we created before in Security and access
 * Creating a cluster for the first time actually takes a few minutes
 ### 4. Export project as runnable JAR file and upload it in our bucket
+> Cluster > Steps > Add step
+* Step type will be Custom_Jar
+* Then choose location for the JAR you uploaded before
+* Next you will pass the file path of the input & output in arguments.
 
 ---
+### 5. Shutdown The Cluster after finishing the job
+* You shutdown cluster from EC2 not from EMR
+> EC2 > Resources > Running Instances 
+* Select running instances
+* Then change action state to Terminate
+> Actions > Instance state > Terminate
+---
 
+## 📚 Resources
+* [Input Data - Shakespeare Text File](https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt)
+* [Hadoop Distributed Systems Course By Garage Education](https://www.youtube.com/playlist?list=PLxNoJq6k39G8Ak39PDC-oYvp6ZRvIn3Pa)
+* [Getting Map/Reduce up and running on AWS by Prof. Patterson](https://www.youtube.com/playlist?list=PLix7MmR3doRojx9jA5NIG_9soB0s4_CXp)
+
+---
 ## ✨ Contribution
 
 Contributions, issues, and feature requests are welcome!
